@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript Component</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Javascript Component (DOM Function)</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h4>Lets find out</h4>
+                <button onclick="showDomElements()">Show DOM elements</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div id="start">
+                    <h2 id="fist">Yolomy is in a <span>h2</span> tag</h2>
+                    <p>Our clothing, your comfort is in a <span>p</span> tag
+                    </p>
+                    <ul>
+                        <li>I am list inside a ul</li>
+                        <li>This is another</li>
+                    </ul>
+                    <button onclick="showTags()">Show DOM element tags</button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <p id="show"></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        window.onload = function () {
+            document.getElementById('start').style.display = 'none';
+            function showDomElements() {
+                document.getElementById('start').style.display = 'block'
+            };
+        };
+        function showTags() {
+            var c = document.getElementById('start').childNodes;
+            var txt = "";
+            var i;
+            for (i = 0; i < c.length; i++) {
+                txt = txt + c[i].nodeName + ",";
+            }
+            document.getElementById("show").innerHTML = txt;
+        };
+        function showDomElements() {
+            document.getElementById('start').style.display = 'block'
+        };
+    </script>
+</body>
+</html>
